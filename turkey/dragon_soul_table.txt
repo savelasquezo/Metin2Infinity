@@ -1,0 +1,284 @@
+##############################	
+##### DragonSoul Table #######	
+##############################	
+Group VnumMapper										
+{										
+	#--#	DragonSoulName	Type							
+	1	¹é·æ¼®	11							
+	2	È­·æ¼®	12							
+	3	Ç³·æ¼®	13							
+	4	Ã¶·æ¼®	14							
+	5	³ú·æ¼®	15							
+	6	Èæ·æ¼®	16							
+}										
+##########################	
+##### Base Bonuses #######	
+##########################	
+Group BasicApplys										
+{										
+	Group ¹é·æ¼®									
+	{									
+		#--#	Apply_Type	Apply_value						
+		1	MAX_HP	1500						
+		2	RESIST_ICE	10						
+		3	ATT_BONUS_TO_ICE	10				
+	}									
+										
+	Group È­·æ¼®									
+	{									
+		#--#	Apply_Type	Apply_value						
+		1	STR	10						
+		2	RESIST_FIRE	10				
+		3	ATT_BONUS_TO_FIRE	10		
+	}									
+	Group Ç³·æ¼®									
+	{									
+		#--#	Apply_Type	Apply_value						
+		1	CON	10						
+		2	RESIST_WIND	10				
+		3	ATT_BONUS_TO_WIND	10		
+	}									
+	Group Ã¶·æ¼®									
+	{									
+		#--#	Apply_Type	Apply_value						
+		1	INT	10						
+		2	RESIST_EARTH	10			
+		3	ATT_BONUS_TO_EARTH	10		
+	}									
+	Group ³ú·æ¼®									
+	{									
+		#--#	Apply_Type	Apply_value						
+		1	DEX	10						
+		2	RESIST_ELEC	10				
+		3	ATT_BONUS_TO_ELEC	10		
+	}									
+	Group Èæ·æ¼®									
+	{									
+		#--#	Apply_Type	Apply_value						
+		1	STUN_PCT	10						
+		2	RESIST_DARK	10						
+		3	ATT_BONUS_TO_DARK	10		
+	}									
+}										
+#################################	
+##### Additional Bonuses ########	
+#################################	
+Group AdditionalApplys							
+{												
+	Group ¹é·æ¼®								
+	{											
+		#--#	Apply_Type	Apply_value	Prob	
+		1	ATT_BONUS_TO_MONSTER	15	10		
+		2	MAGIC_ATT_GRADE	15	10				
+		3	MAGIC_DEF_GRADE	15	10				
+		4	SKILL_DAMAGE_BONUS	15	10			
+		5	SKILL_DEFEND_BONUS	15	10			
+		6	MELEE_MAGIC_ATTBONUS_PER	10	10	
+	}											
+	Group È­·æ¼®								
+	{											
+		#--#	Apply_Type	Apply_value	Prob	
+		1	ATT_BONUS_TO_WARRIOR	15	10		
+		2	RESIST_WARRIOR	15	10				
+		3	ATT_BONUS	200	10					
+		4	DEF_BONUS	100	10					
+		5	NORMAL_HIT_DAMAGE_BONUS	15	10		
+		6	NORMAL_HIT_DEFEND_BONUS	15	10		
+	}											
+	Group Ç³·æ¼®								
+	{											
+		#--#	Apply_Type	Apply_value	Prob	
+		1	ATT_BONUS_TO_SURA	15	10			
+		2	RESIST_SURA	15	10					
+		3	MAX_HP	3000	10					
+		4	HP_REGEN	10	10					
+		5	STEAL_HP	10	10					
+		6	KILL_HP_RECOVER	10	10				
+		7	MAX_HP_PCT	20	10					
+	}											
+	Group Ã¶·æ¼®								
+	{											
+		#--#	Apply_Type	Apply_value	Prob	
+		1	ATT_BONUS_TO_SHAMAN	15	10			
+		2	RESIST_SHAMAN	15	10				
+		3	MAX_SP	1500	10					
+		4	SP_REGEN	10	10					
+		5	STEAL_SP	10	10					
+		6	KILL_SP_RECOVER	10	10				
+		7	MAX_SP_PCT	20	10					
+	}											
+	Group ³ú·æ¼®								
+	{											
+		#--#	Apply_Type	Apply_value	Prob	
+		1	ATT_BONUS_TO_ASSASSIN	15	10		
+		2	RESIST_ASSASSIN	15	10				
+		3	CAST_SPEED	15	10					
+		4	CRITICAL_PCT	20	10				
+		5	PENETRATE_PCT	20	10				
+	}											
+	Group Èæ·æ¼®								
+	{											
+		#--#	Apply_Type	Apply_value	Prob	
+		1	ATTBONUS_HUMAN	15	10				
+		2	BLOCK	10	10						
+		3	DODGE	10	10						
+		4	REFLECT_MELEE	10	10				
+		5	RESIST_CRITICAL	10	10				
+		6	RESIST_PENETRATE	10	10			
+	}									
+}										
+										
+###########################################	
+##### Amount of Additional Bonuses ########	
+###########################################	
+Group ApplyNumSettings										
+{										
+	Group Default									
+	{									
+		#--#	GRADE_NORMAL	GRADE_BRILLIANT	GRADE_RARE	GRADE_ANCIENT	GRADE_LEGENDARY	GRADE_MYTH
+		basis	1	1	1	2	2	3
+		add_min	0	1	1	1	1	1
+		add_max	0	1	2	3	4	5
+	}									
+}										
+										
+##############################	
+##### Step Bonification ######	
+##############################	
+Group WeightTables										
+{										
+	Group Default									
+	{									
+		Group GRADE_NORMAL
+		{
+			#--#	0	1	2	3	4	5	6
+			STEP_LOWEST	1	2	3	0	0	0	0
+			STEP_LOW	2	3	4	0	0	0	0
+			STEP_MID	3	4	5	6	0	0	0
+			STEP_HIGH	4	5	6	7	0	0	0
+			STEP_HIGHEST	5	6	7	8	10	0	0
+		}
+		Group GRADE_BRILLIANT
+		{
+			#--#	0	1	2	3	4	5	6
+			STEP_LOWEST	1	2	3	3	0	0	0
+			STEP_LOW	2	3	3	5	0	0	0
+			STEP_MID	3	3	5	6	0	0	0
+			STEP_HIGH	3	5	6	7	9	0	0
+			STEP_HIGHEST	5	6	7	9	12	0	0
+		}
+		Group GRADE_RARE
+		{
+			#--#	0	1	2	3	4	5	6
+			STEP_LOWEST	3	4	5	6	9	0	0
+			STEP_LOW	4	5	6	9	12	0	0
+			STEP_MID	5	6	9	12	15	0	0
+			STEP_HIGH	6	9	12	15	18	0	0
+			STEP_HIGHEST	9	12	15	18	25	0	0
+		}
+		Group GRADE_ANCIENT
+		{
+			#--#	0	1	2	3	4	5	6
+			STEP_LOWEST	6	7	9	11	12	0	0
+			STEP_LOW	7	9	11	12	15	0	0
+			STEP_MID	9	11	12	15	21	0	0
+			STEP_HIGH	11	12	15	21	25	0	0
+			STEP_HIGHEST	12	15	21	25	37	50	0
+		}
+		Group GRADE_LEGENDARY
+		{
+			#--#	0	1	2	3	4	5	6
+			STEP_LOWEST	18	21	25	28	31	0	0
+			STEP_LOW	21	25	28	31	34	0	0
+			STEP_MID	25	28	31	34	40	0	0
+			STEP_HIGH	28	31	34	40	46	56	0
+			STEP_HIGHEST	31	34	40	46	56	65	75
+		}
+		Group GRADE_MYTH
+		{
+			#--#	0	1	2	3	4	5	6
+			STEP_LOWEST	21	25	28	31	34	0	0
+			STEP_LOW	28	31	34	37	40	0	0
+			STEP_MID	31	34	37	43	50	0	0
+			STEP_HIGH	40	46	53	59	65	75	0
+			STEP_HIGHEST	46	53	59	65	75	85	100
+		}
+	}
+}
+############################	
+##### Class Refinement #####	
+############################	
+Group RefineGradeTables									
+{									
+	Group Default								
+	{								
+		#--#	NEED_COUNT	FEE	GRADE_NORMAL	GRADE_BRILLIANT	GRADE_RARE	GRADE_ANCIENT	GRADE_LEGENDARY	GRADE_MYTH
+		GRADE_NORMAL	2	30000	25	75	0	0	0	0
+		GRADE_BRILLIANT	2	50000	0	35	65	0	0	0
+		GRADE_RARE	2	70000	0	0	45	55	0	0
+		GRADE_ANCIENT	2	100000	0	0	0	55	45	0
+		GRADE_LEGENDARY	2	150000	0	0	0	0	65	35
+	}								
+}									
+##############################	
+##### Step Refinement ########	
+##############################	
+Group RefineStepTables									
+{									
+	Group Default								
+	{								
+		#--#	NEED_COUNT	FEE	STEP_LOWEST	STEP_LOW	STEP_MID	STEP_HIGH	STEP_HIGHEST
+		STEP_LOWEST	2	375000	45	55	0	0	0
+		STEP_LOW	2	521000	0	55	45	0	0
+		STEP_MID	2	785000	0	0	60	40	0
+		STEP_HIGH	2	931500	0	0	0	65	35
+	}								
+}									
+############################	
+##### Level Refinement #####	
+############################	
+Group RefineStrengthTables									
+{									
+	Group Default								
+	{								
+		#--#	FEE	0	1	2	3	4	5
+		MATERIAL_DS_REFINE_NORMAL	375000	100	75	55	40	30	25
+		MATERIAL_DS_REFINE_BLESSED	535000	100	80	60	45	35	30
+		MATERIAL_DS_REFINE_HOLLY	715000	100	85	65	50	40	35
+	}								
+}									
+
+###########################
+##### Time Extraction #####
+###########################
+Group DragonHeartExtTables										
+{										
+	Group Default									
+	{									
+		#--#	1	2	3	4	5			
+		CHARGING	0	5	10	20	30			
+		GRADE_NORMAL	50	35	12	2	1			
+		GRADE_BRILLIANT	35	40	20	4	1			
+		GRADE_RARE	20	35	30	12	3			
+		GRADE_ANCIENT	15	30	35	15	5			
+		GRADE_LEGENDARY	10	20	40	20	10			
+		GRADE_MYTH	10	10	10	20	50			
+	}									
+}										
+										
+############################
+##### Stone Extraction #####
+############################
+Group DragonSoulExtTables										
+{										
+	Group Default									
+	{									
+		#--#	Prob	ByProduct						
+		GRADE_NORMAL	20	30270						
+		GRADE_BRILLIANT	35	30270						
+		GRADE_RARE	50	30270						
+		GRADE_ANCIENT	65	30270						
+		GRADE_LEGENDARY	80	30270						
+		GRADE_MYTH	100	30270
+	}									
+}										

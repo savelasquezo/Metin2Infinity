@@ -1,0 +1,12 @@
+turkey/gaya/
+turkey/quest/itemshop/
+turkey/quest/object/
+turkey/quest/extractKeys.sh
+turkey/quest/make
+turkey/quest/make.py
+turkey/quest/make.sh
+turkey/quest/pre_qc.py
+turkey/quest/pre_qc.pyc
+turkey/quest/qc
+turkey/quest/qc.core
+turkey/quest/qc_x64

@@ -1,0 +1,56 @@
+#Rocio_Rojo						
+section						
+	item_vnum	50821				
+	apply_type	CRITICAL_PCT				
+	apply_value	10	10	10	10	10
+	apply_duration	1800	1800	1800	1800	1800
+end						
+						
+#Rocio_Rosa						
+section						
+	item_vnum	50822				
+	apply_type	PENETRATE_PCT				
+	apply_value	10	10	10	10	10
+	apply_duration	1800	1800	1800	1800	1800
+end						
+						
+#Rocio_Amarillo						
+section						
+	item_vnum	50823				
+	apply_type	ATTACK_SPEED				
+	apply_value	10	10	10	10	10
+	apply_duration	1800	1800	1800	1800	1800
+end						
+						
+#Rocio_Verde						
+section						
+	item_vnum	50824				
+	apply_type	RESIST_MAGIC				
+	apply_value	10	10	10	10	10
+	apply_duration	1800	1800	1800	1800	1800
+end						
+
+#Rocio_Azul						
+section						
+	item_vnum	50825				
+	apply_type	ATT_BONUS				
+	apply_value	120	120	120	120	120
+	apply_duration	1800	1800	1800	1800	1800
+end						
+
+#Rocio_Balnco						
+section						
+	item_vnum	50826				
+	apply_type	DEF_BONUS				
+	apply_value	150	150	150	150	150
+	apply_duration	1800	1800	1800	1800	1800
+end
+
+#Cristal_de_Energia
+section
+	item_vnum	51002
+	apply_type	ENERGY
+	apply_value	1	2	3	4	5
+	apply_duration	1800	1800	1800	1800	1800
+end
+

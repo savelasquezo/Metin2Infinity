@@ -1,0 +1,55 @@
+--[[
+Server Files Author : BEST Production
+Skype : best_desiqner@hotmail.com
+Website : www.bestproduction-projects.com
+--]]
+quest ride begin
+	state start begin
+		function Ride( vnum, remain_time )
+			ride_info = {
+				[71220] = { 20243,	60*60*1,					apply.DEF_GRADE_BONUS,	75,		1,	true	},
+				[71222] = { 20244,	60*60*1,	apply.DEF_GRADE_BONUS,	100,	1,	false	},
+				[71223] = { 20245,	60*60*1,					apply.DEF_GRADE_BONUS,	100,	1,	true	},
+				[71224] = { 20246,	60*60*1,	apply.DEF_GRADE_BONUS,	150,	1,	false	},
+				[71225] = { 20247,	60*60*1,					apply.DEF_GRADE_BONUS,	125,	1,	true	},
+				[71192] = { 20240,	60*60*1,	apply.DEF_GRADE_BONUS,	200,	1,	false	},
+				[71193] = { 20239,	60*60*1,					apply.ATT_GRADE_BONUS,	200,	1,	true	},
+				[71121] = { 20113,	60*60*1,	apply.ATT_GRADE_BONUS,	300,	1,	false	},
+				[71171] = { 20227,	60*60*1,	apply.MOV_SPEED,	60,		1,	false,	false,	false},
+				[71172] = { 20226,	60*60*1,	apply.MOV_SPEED,	60,		1,	false,	false,	false},
+				[71176] = { 20231,	60*60*1,	apply.MOV_SPEED,	60,		1,	false,	false,	false},
+				[71177] = { 20232,	60*60*1,	apply.MOV_SPEED,	60,		1,	false,	false,	false},
+				[71182] = { 20233,	60*60*1,	apply.MOV_SPEED,	60,		1,	false,	false,	false},
+				[71183] = { 20234,	60*60*1,	apply.MOV_SPEED,	60,		1,	false,	false,	false},
+				[71184] = { 20235,	60*60*1,	apply.MOV_SPEED,	60,		1,	false,	false,	false},
+				[71185] = { 20236,	60*60*1,	apply.MOV_SPEED,	60,		1,	false,	false,	false},
+				[71186] = { 20237,	60*60*1,	apply.MOV_SPEED,	60,		1,	false,	false,	false},
+				[71187] = { 20238,	60*60*1,	apply.MOV_SPEED,	60,		1,	false,	false,	false},
+				[71188] = { 20239,	60*60*1,	apply.MOV_SPEED,	60,		1,	false,	false,	false},
+				}
+			if ride_info[vnum][2] == 0 and remain_time != 0 then
+				pc.mount( ride_info[vnum][1], remain_time*60 )
+				pc.mount_bonus( ride_info[vnum][3], ride_info[vnum][4], remain_time*60 )
+			else
+				pc.mount( ride_info[vnum][1], ride_info[vnum][2] )
+				pc.mount_bonus( ride_info[vnum][3], ride_info[vnum][4], ride_info[vnum][2] )
+			end
+		end
+		when login begin
+			local vnum, remain_time = pc.get_special_ride_vnum()
+			if vnum <=  71113 or vnum >71121 then
+				return
+			end
+			if 0 != vnum then
+				ride.Ride(vnum, remain_time)
+			end
+		end
+
+		when 71220.use or 71222.use or 71223.use or 71224.use or 71225.use or 71119.use or 71192.use or 71193.use 
+				or 71171.use or 71172.use or 71176.use or 71177.use or 71182.use or 71183.use or 71184.use or 71185.use or 71186.use or 71187.use begin
+				syschat("use.")
+				--item.set_socket(2, 60*24*365*60)
+				pc.mount(20246, 3600)
+		end
+	end
+end
